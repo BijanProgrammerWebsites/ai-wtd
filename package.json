@@ -5,5 +5,14 @@
     "server:dev": "npm --prefix server run dev",
     "client:dev": "npm --prefix client run dev"
   },
-  "author": "BijanProgrammer"
+  "author": "BijanProgrammer",
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.5.0"
+  },
+  "dependencies": {
+    "open-props": "^1.7.6"
+  }
 }

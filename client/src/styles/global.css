@@ -1,0 +1,23 @@
+@import "open-props/open-props.min.css";
+@import "open-props/normalize.min.css";
+@import "open-props/buttons.min.css";
+
+body {
+    display: grid;
+    place-content: center;
+
+    > main {
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+
+            .reset {
+                --_bg-dark: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+#pixels {
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    grid-template-rows: repeat(28, 1fr);
+
+    block-size: 80vmin;
+    max-block-size: 30rem;
+    inline-size: 80vmin;
+    max-inline-size: 30rem;
+
+    .pixel {
+        background-color: var(--surface-2);
+    }
+}

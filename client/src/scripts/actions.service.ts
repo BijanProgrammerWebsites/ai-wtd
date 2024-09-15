@@ -1,10 +1,10 @@
 import {SelectorService} from './selector.service.ts';
-import {PixelsService} from './pixels.service.ts';
+import {CanvasService} from './canvas.service.ts';
 
 export class ActionsService {
     public constructor(
         private selectorService: SelectorService,
-        private pixelsService: PixelsService
+        private canvasService: CanvasService
     ) {}
 
     public initialize(): void {
@@ -14,13 +14,13 @@ export class ActionsService {
 
     private addResetButtonEventListeners(): void {
         this.selectorService.resetButton.addEventListener('click', () => {
-            this.pixelsService.reset();
+            this.canvasService.reset();
         });
     }
 
     private addGuessButtonEventListeners(): void {
         this.selectorService.guessButton.addEventListener('click', async () => {
-            const pixels = this.pixelsService.export();
+            const pixels = this.canvasService.export();
 
             const response = await fetch('http://localhost:5000/api/v1/guess', {
                 method: 'POST',

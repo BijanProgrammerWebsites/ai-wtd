@@ -3,6 +3,14 @@ export class SelectorService {
         return document.querySelector('#pixels')!;
     }
 
+    public get canvas(): HTMLCanvasElement {
+        return document.querySelector('#canvas')!;
+    }
+
+    public get scaledCanvas(): HTMLCanvasElement {
+        return document.querySelector('#scaled-canvas')!;
+    }
+
     public get pixels(): HTMLDivElement[] {
         return Array.from(document.querySelectorAll('.pixel'));
     }

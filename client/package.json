@@ -15,5 +15,9 @@
         "prettier": "^3.3.3",
         "typescript": "^5.5.3",
         "vite": "^5.4.1"
+    },
+    "dependencies": {
+        "@tensorflow/tfjs": "^4.21.0",
+        "fabric": "^6.4.2"
     }
 }

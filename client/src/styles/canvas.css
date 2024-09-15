@@ -1,0 +1,7 @@
+#canvas {
+    background-color: var(--surface-2);
+}
+
+#scaled-canvas {
+    display: none;
+}

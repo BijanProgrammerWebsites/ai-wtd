@@ -28,6 +28,12 @@ export class PixelsService {
         });
     }
 
+    public import(pixels: number[]): void {
+        this.selectorService.pixels.map((pixel, i) => {
+            this.updatePixelColor(pixel, pixels[i]);
+        });
+    }
+
     private addDocumentEventListeners(): void {
         document.addEventListener('mousedown', () => {
             this.isDrawing = true;
@@ -66,8 +72,8 @@ export class PixelsService {
 
             this.updatePixelColor(pixel, 255);
 
-            const lowColor = 20;
-            const mediumColor = 60;
+            const lowColor = 90;
+            const mediumColor = 180;
 
             this.updatePixelColor(this.selectorService.getPixelByPosition(row - 1, column - 1), lowColor);
             this.updatePixelColor(this.selectorService.getPixelByPosition(row - 1, column), mediumColor);
@@ -89,7 +95,7 @@ export class PixelsService {
             return;
         }
 
-        color = Math.min(255, color + +(pixel.dataset.color || '0'));
+        color = Math.min(255, Math.max(color, +(pixel.dataset.color || '0')));
 
         pixel.dataset.color = color.toString();
 
